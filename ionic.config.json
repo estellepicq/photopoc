@@ -1,0 +1,7 @@
+{
+  "name": "photopoc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
