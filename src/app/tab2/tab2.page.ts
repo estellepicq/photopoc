@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Clipboard } from '@capacitor/clipboard';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,18 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  text = 'Hello world!';
+
+  async copy() {
+    await Clipboard.write({
+      string: this.text
+    });
+  };
+  
+  async displayClipboard() {
+    const { type, value } = await Clipboard.read();
+  
+    alert(`Got ${type} from clipboard: ${value}`);
+  };
 
 }
